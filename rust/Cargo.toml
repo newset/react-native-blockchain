@@ -1,0 +1,21 @@
+[package]
+name = "react-native-blockchain"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+cbindgen = "0.9"
+
+[dependencies]
+tiny-bip39 = "1.0.0"
+web3 = "0.17.0"
+
+[lib]
+name = "react_native_blockchain"
+crate-type = ["staticlib", "cdylib"]
+path = "src/main.rs"
+
+[target.'cfg(target_os="android")'.dependencies]
+jni = "0.13.1"
